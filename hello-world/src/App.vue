@@ -10,13 +10,11 @@
     </div>
 <br>
 
-    <div v-if="accesLevel == 'admin'"> Usuario: Admin </div>
-    <div v-else-if="accesLevel == 'markting'"> Usuario: Markting</div>
-    <div v-else> Usuario: user</div>
+    <div v-if="accesLevel == 'admin'"> Usuario Admin </div>
+    <div v-else-if="accesLevel == 'markting'"> Usuario Markting</div>
+    <div v-else> Usuario user</div>
 
-
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <HelloWorld />
 </template>
 
 <script>
