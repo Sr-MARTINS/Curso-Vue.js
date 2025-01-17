@@ -2,7 +2,18 @@
     <!--CHAMANDO O ELEMENTO-->
       <!--OU PODEMOS USAR DA FORMA SIMPLIFICANDO -->
       <!-- <TheHeader /> -->
-    <TheHeader></TheHeader> 
+    <TheHeader v-if="showHeader" />
+
+    <div v-show="showName">
+      Nome: {{ fristName }} <br>
+      Sobrenome: {{ lastName }}
+    </div>
+<br>
+
+    <div v-if="accesLevel == 'admin'"> Usuario: Admin </div>
+    <div v-else-if="accesLevel == 'markting'"> Usuario: Markting</div>
+    <div v-else> Usuario: user</div>
+
 
   <img alt="Vue logo" src="./assets/logo.png">
   <HelloWorld msg="Welcome to Your Vue.js App"/>
@@ -24,6 +35,15 @@ export default {
 
     // PASSAREMOS O ELEMENTO PRA ASSIM SEM SER "EXPORTADO" A PG
     TheHeader
+  },
+  data() {
+    return {
+      showHeader : true,
+      fristName : 'Joao',
+      lastName : 'Victor',
+      showName: true,
+      accesLevel: 'user',
+    }
   }
 }
 </script>
