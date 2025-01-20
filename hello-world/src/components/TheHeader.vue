@@ -5,6 +5,17 @@
 
 <!--TEMPLATE - HTML -->
 <template>
+
+    <h1 :class="{'titel': true, 'titel-home': home}">
+        Curso de Vue.js
+    </h1>
+
+    <p :class="['subTitle', 'tite']">
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Accusantium rerum minima voluptatem beatae incidunt
+    </p>
+
+    <p :style="pStyle"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit at impedit libero delectus incidunt illo. Quas </p>
+
     <header class="header">
         Header
     </header>
@@ -27,7 +38,9 @@
         name: 'App',
         data() {
             return {
-    
+                home: true,
+                pStyle: {'color': 'aqua', 'background-color': 'black' },
+                classVar: 'titel',
                 todos: [ 
                         { 
                             "userId": 1, 
@@ -69,6 +82,18 @@
 
 <!--ESTILO - CSS -->
 <style>
+    .titel {
+        font-size: 30px;
+        color:  #fa3030;
+    }
+    .titel-home {
+        font-size: 50px;
+        color: green;
+    } 
+    .subTitle {
+        color: yellow;
+    }
+
  
     .header {
         font-size: 1rem;
