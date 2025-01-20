@@ -6,7 +6,7 @@
 <!--TEMPLATE - HTML -->
 <template>
 
-    <h1 :class="{'titel': true, 'titel-home': home}">
+    <!-- <h1 :class="{'titel': true, 'titel-home': home}">
         Curso de Vue.js
     </h1>
 
@@ -14,11 +14,11 @@
         Lorem ipsum, dolor sit amet consectetur adipisicing elit. Accusantium rerum minima voluptatem beatae incidunt
     </p>
 
-    <p :style="pStyle"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit at impedit libero delectus incidunt illo. Quas </p>
+    <p :style="pStyle"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit at impedit libero delectus incidunt illo. Quas </p> -->
 
-    <header class="header">
+    <!-- <header class="header">
         Header
-    </header>
+    </header> -->
 
     <div>
 
@@ -30,6 +30,53 @@
         </div>
 
     </div>
+
+    <br><br>
+
+    <div>
+        <label>Nome: </label>  <br>
+
+        <input type="text" v-model="name"> <br>
+
+        {{ name }}
+    </div>
+    <br> <br>
+
+    <div>
+        <label>Sports: </label> <br>
+        <select v-model="sports">
+            <option value="">Escolha</option> 
+            <option value="futboll">Futboll</option> 
+            <option value="tenis">Tenis</option> 
+            <option value="basquete">Basquete</option> 
+        </select> <br>
+        {{ sports }}
+    </div>
+    <br><br>
+
+
+    <div>
+        <label>NewSelection: </label> <br>
+        <input  v-model="newsLeter" type="radio" value="sim"> Sim
+        <input  v-model="newsLeter" type="radio" value="não"> Não
+        
+        <br>
+        {{ newsLeter }}
+    </div>
+    <br><br>
+
+    <div>
+        <label> Escolha uma cor: </label> <br>
+        <select v-model="cores"> 
+            <option value="">Cores</option>
+            <option value="branco">Branco</option>
+            <option value="preto">Preto</option>
+            <option value="azul">Azul</option>
+        </select> <br>
+        {{ cores }}
+    </div>
+
+
 </template>
 
 <!--LOGICA - JS -->
@@ -38,23 +85,31 @@
         name: 'App',
         data() {
             return {
+                sports:'futboll',
+                name: "Jonh",
+
+                newsLeter: '',
+
+                cores: '',
+
                 home: true,
                 pStyle: {'color': 'aqua', 'background-color': 'black' },
                 classVar: 'titel',
+
                 todos: [ 
                         { 
                             "userId": 1, 
                             "id": 1, 
                             "title": "delectus aut autem", 
                             "completed": false,
-                            myImg:'https://placehold.co/150'
+                            // myImg:'https://placehold.co/150'
                         }, 
                         { 
                             "userId": 1, 
                             "id": 2, 
                             "title": "quis ut nam facilis et officia qui", 
                             "completed": false,
-                            myImg:'https://placehold.co/150'
+                            // myImg:'https://placehold.co/150'
                         }, 
                         { 
                             "userId": 1, 

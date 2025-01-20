@@ -3,16 +3,16 @@
       <!--OU PODEMOS USAR DA FORMA SIMPLIFICANDO -->
       <!-- <TheHeader /> -->
     <TheHeader v-if="showHeader" />
-
+<!-- 
     <div v-show="showName">
       Nome: {{ fristName }} <br>
       Sobrenome: {{ lastName }}
-    </div>
+    </div> -->
 <br>
 
-    <div v-if="accesLevel == 'admin'"> Usuario Admin </div>
+    <!-- <div v-if="accesLevel == 'admin'"> Usuario Admin </div>
     <div v-else-if="accesLevel == 'markting'"> Usuario Markting</div>
-    <div v-else> Usuario user</div>
+    <div v-else> Usuario user</div> -->
 
   <HelloWorld />
 </template>
