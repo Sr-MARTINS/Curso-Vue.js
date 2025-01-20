@@ -13,7 +13,9 @@
 
         <div v-for="(obj, index) in todos" 
             v-bind:key="obj.id" class="list">
-           {{ index }} - {{ obj.title }}
+
+            <img v-if="obj.myImg" v-bind:src="obj.myImg">
+            {{ index }} - {{ obj.title }}
         </div>
 
     </div>
@@ -25,18 +27,21 @@
         name: 'App',
         data() {
             return {
+    
                 todos: [ 
                         { 
                             "userId": 1, 
                             "id": 1, 
                             "title": "delectus aut autem", 
-                            "completed": false 
+                            "completed": false,
+                            myImg:'https://placehold.co/150'
                         }, 
                         { 
                             "userId": 1, 
                             "id": 2, 
                             "title": "quis ut nam facilis et officia qui", 
-                            "completed": false 
+                            "completed": false,
+                            myImg:'https://placehold.co/150'
                         }, 
                         { 
                             "userId": 1, 
