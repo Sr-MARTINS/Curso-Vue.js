@@ -74,7 +74,23 @@
             <option value="azul">Azul</option>
         </select> <br>
         {{ cores }}
-    </div>
+    </div> <br> <br>
+    
+    <div>
+        <button v-on:click.once="event">
+            Enviar
+        </button>
+    </div> <br><br>
+
+    <div @mouseover="onMouse()" @mouseout="outside()">
+        <h2>Mouse over</h2>
+    </div> <br><br>
+
+    <form action="https://www.google.com.br/?hl=pt-BR" @submit.prevent="onSubmit()">
+        <button  type="submit">
+            Derecionamento
+        </button>
+    </form>
 
 
 </template>
@@ -131,7 +147,23 @@
                         }, 
                     ]
             }
+        },
+
+        methods: {
+            event($evt) {
+                console.log('click', $evt);
+            },
+            onMouse() {
+                console.log('moveu')
+            },
+            outside() {
+                console.log('soltou')
+            },
+            onSubmit() {
+                console.log("redirecionol")
+            }
         }
+
     }
 </script>
 
