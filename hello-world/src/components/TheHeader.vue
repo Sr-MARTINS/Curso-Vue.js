@@ -82,15 +82,44 @@
         </button>
     </div> <br><br>
 
-    <div @mouseover="onMouse()" @mouseout="outside()">
+    <!-- <div @mouseover="onMouse()" @mouseout="outside()">
         <h2>Mouse over</h2>
-    </div> <br><br>
+    </div> <br><br> -->
 
     <form action="https://www.google.com.br/?hl=pt-BR" @submit.prevent="onSubmit()">
         <button  type="submit">
             Derecionamento
         </button>
-    </form>
+    </form> <br><br>
+
+    <div>
+        <button @click="mostrar()">
+           mostra
+        </button>
+    </div> <br><br>
+
+    <div>
+        {{ frastElement }}
+    </div> <br><br>
+
+    <div>
+        <h2>Todos em Aberto</h2>
+
+        <div v-for="index in todos" :key="index.id">
+            {{ index.title }} 
+        </div> <br>
+
+        <h2>Todos complet</h2>
+        <div v-for="ind in complet" :key="ind.id">
+            {{ ind.title }}
+        </div>
+
+        <h2>Todos</h2>
+        <div v-for="ind in todos" :key="ind.id">
+            <input type="checkbox" v-model="ind.completed">
+            {{ ind.title }}
+        </div>
+    </div>
 
 
 </template>
@@ -145,22 +174,47 @@
                             "title": "laboriosam mollitia et enim quasi adipisci quia provident illum", 
                             "completed": false 
                         }, 
-                    ]
+                    ],
+
+                user: {
+                frest_name: 'Joao',
+                last_name: 'Victor'
+                },
             }
         },
+
+        computed: {
+            frastElement() {
+                return `${this.user.frest_name} ${this.user.last_name}`
+            },
+
+            undeComplet() {
+                return this.todos.filter(todo => !todo.completed)
+            },
+
+            complet() {
+                return this.todos.filter(todsComple => todsComple.completed)
+            }
+
+
+        },
+        
 
         methods: {
             event($evt) {
                 console.log('click', $evt);
             },
-            onMouse() {
-                console.log('moveu')
-            },
-            outside() {
-                console.log('soltou')
-            },
+            // onMouse() {
+            //     console.log('moveu')
+            // },
+            // outside() {
+            //     console.log('soltou')
+            // },
             onSubmit() {
                 console.log("redirecionol")
+            },
+            mostrar() {
+                console.log(this.user)
             }
         }
 
