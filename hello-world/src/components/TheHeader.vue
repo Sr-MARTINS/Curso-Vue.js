@@ -119,7 +119,23 @@
             <input type="checkbox" v-model="ind.completed">
             {{ ind.title }}
         </div>
+    </div> <br><br><br>
+
+    <div>
+        <input type="text" v-model="isName"> <br><br>
+            {{ isName }}
+        
+    </div> <br><br>  
+
+    <div>
+        <select v-model="pageCont">
+            <option value="5">5</option>
+            <option value="10">10</option>
+            <option value="15">15</option>
+        </select> <br> 
+        {{ pageCont }}
     </div>
+
 
 
 </template>
@@ -130,6 +146,10 @@
         name: 'App',
         data() {
             return {
+                pageCont: '',
+
+                isName: "",
+
                 sports:'futboll',
                 name: "Jonh",
 
@@ -183,6 +203,17 @@
             }
         },
 
+        watch: {
+            isName(vl) {
+                if(vl.length >= 3) {
+                    this.saveUserName()
+                }
+            },
+            pageCont () {
+                this.ContElements()
+            }
+        },
+ 
         computed: {
             frastElement() {
                 return `${this.user.frest_name} ${this.user.last_name}`
@@ -201,6 +232,16 @@
         
 
         methods: {
+            saveUserName() {
+                console.log("Ajax")
+                console.log(this.isName)
+            },
+            ContElements () {
+                console.log("Ajax")
+                console.log(this.pageCont)
+            },
+
+
             event($evt) {
                 console.log('click', $evt);
             },
@@ -215,7 +256,8 @@
             },
             mostrar() {
                 console.log(this.user)
-            }
+            },
+
         }
 
     }
