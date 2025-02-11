@@ -20,7 +20,7 @@
         Header
     </header> -->
 
-    <div>
+    <!-- <div>
 
         <div v-for="(obj, index) in todos" 
             v-bind:key="obj.id" class="list">
@@ -29,20 +29,17 @@
             {{ index }} - {{ obj.title }}
         </div>
 
-    </div>
+    </div> -->
 
-    <br><br>
-
-    <div>
+    <!-- <div>
         <label>Nome: </label>  <br>
 
         <input type="text" v-model="name"> <br>
 
         {{ name }}
-    </div>
-    <br> <br>
+    </div> -->
 
-    <div>
+    <!-- <div>
         <label>Sports: </label> <br>
         <select v-model="sports">
             <option value="">Escolha</option> 
@@ -51,21 +48,18 @@
             <option value="basquete">Basquete</option> 
         </select> <br>
         {{ sports }}
-    </div>
-    <br><br>
+    </div> -->
 
-
-    <div>
+    <!-- <div>
         <label>NewSelection: </label> <br>
         <input  v-model="newsLeter" type="radio" value="sim"> Sim
         <input  v-model="newsLeter" type="radio" value="não"> Não
         
         <br>
         {{ newsLeter }}
-    </div>
-    <br><br>
+    </div> -->
 
-    <div>
+    <!-- <div>
         <label> Escolha uma cor: </label> <br>
         <select v-model="cores"> 
             <option value="">Cores</option>
@@ -74,35 +68,34 @@
             <option value="azul">Azul</option>
         </select> <br>
         {{ cores }}
-    </div> <br> <br>
+    </div>  -->
     
-    <div>
+    <!-- <div>
         <button v-on:click.once="event">
             Enviar
         </button>
-    </div> <br><br>
+    </div> <br><br> -->
 
     <!-- <div @mouseover="onMouse()" @mouseout="outside()">
         <h2>Mouse over</h2>
-    </div> <br><br> -->
+    </div>  -->
 
-    <form action="https://www.google.com.br/?hl=pt-BR" @submit.prevent="onSubmit()">
+    <!-- <form action="https://www.google.com.br/?hl=pt-BR" @submit.prevent="onSubmit()">
         <button  type="submit">
             Derecionamento
         </button>
-    </form> <br><br>
-
+    </form> 
     <div>
         <button @click="mostrar()">
            mostra
         </button>
-    </div> <br><br>
+    </div> 
 
     <div>
         {{ frastElement }}
-    </div> <br><br>
+    </div>  -->
 
-    <div>
+    <!-- <div>
         <h2>Todos em Aberto</h2>
 
         <div v-for="index in todos" :key="index.id">
@@ -119,36 +112,50 @@
             <input type="checkbox" v-model="ind.completed">
             {{ ind.title }}
         </div>
-    </div> <br><br><br>
+    </div> -->
 
-    <div>
+    <!-- <div>
         <input type="text" v-model="isName"> <br><br>
             {{ isName }}
         
-    </div> <br><br>  
+    </div> -->
 
-    <div>
+    <!-- <div>
         <select v-model="pageCont">
             <option value="5">5</option>
             <option value="10">10</option>
             <option value="15">15</option>
         </select> <br> 
         {{ pageCont }}
+    </div> -->
+
+
+    <div>
+        <desmont v-if="showDesmont"/>
+        <h1>Hello World</h1>
+        {{ isName }}  <br><br> 
+        
+        <button @click="showDesmont = !showDesmont">
+            Toggle <>
+        </button>
     </div>
-
-
 
 </template>
 
 <!--LOGICA - JS -->
 <script>
+    import desmont from '@/components/desmont.vue'
     export default {
         name: 'App',
+        components: {desmont},
         data() {
             return {
+                isName: 'Martins',
+                showDesmont: true,
+
                 pageCont: '',
 
-                isName: "",
+                // isName: "",
 
                 sports:'futboll',
                 name: "Jonh",
@@ -203,92 +210,88 @@
             }
         },
 
-        watch: {
-            isName(vl) {
-                if(vl.length >= 3) {
-                    this.saveUserName()
-                }
-            },
-            pageCont () {
-                this.ContElements()
-            }
-        },
+        //HOOKS
+        // beforeCreate() {
+        //     console.log("beforCreate")
+        //     console.log( `Estado:`, this.isName)
+        //     console.log(`DOM:`, this.$el)
+        // },
+        // created() {
+        //     console.log("Create")
+        //     console.log( `Estado:`, this.isName)
+        //     console.log(`DOM:`, this.$el)
+        // },
+        // beforeMount() {
+        //     console.log("beforeMount")
+        //     console.log( `Estado:`, this.isName)
+        //     console.log(`DOM:`, this.$el)
+        // },
+        // mounted() {
+        //     console.log("mounted")
+        //     console.log( `Estado:`, this.isNam)
+        //     console.log(`DOM:`, this.$el)
+        // },
+
+        // watch: {
+        //     isName(vl) {
+        //         if(vl.length >= 3) {
+        //             this.saveUserName()
+        //         }
+        //     },
+        //     pageCont () {
+        //         this.ContElements()
+        //     }
+        // },
  
-        computed: {
-            frastElement() {
-                return `${this.user.frest_name} ${this.user.last_name}`
-            },
+        // computed: {
+        //     frastElement() {
+        //         return `${this.user.frest_name} ${this.user.last_name}`
+        //     },
 
-            undeComplet() {
-                return this.todos.filter(todo => !todo.completed)
-            },
+        //     undeComplet() {
+        //         return this.todos.filter(todo => !todo.completed)
+        //     },
 
-            complet() {
-                return this.todos.filter(todsComple => todsComple.completed)
-            }
-
-
-        },
-        
-
-        methods: {
-            saveUserName() {
-                console.log("Ajax")
-                console.log(this.isName)
-            },
-            ContElements () {
-                console.log("Ajax")
-                console.log(this.pageCont)
-            },
+        //     complet() {
+        //         return this.todos.filter(todsComple => todsComple.completed)
+        //     }
 
 
-            event($evt) {
-                console.log('click', $evt);
-            },
-            // onMouse() {
-            //     console.log('moveu')
-            // },
-            // outside() {
-            //     console.log('soltou')
-            // },
-            onSubmit() {
-                console.log("redirecionol")
-            },
-            mostrar() {
-                console.log(this.user)
-            },
+        // },
 
-        }
+        // methods: {
+        //     saveUserName() {
+        //         console.log("Ajax")
+        //         console.log(this.isName)
+        //     },
+        //     ContElements () {
+        //         console.log("Ajax")
+        //         console.log(this.pageCont)
+        //     },
+
+
+        //     event($evt) {
+        //         console.log('click', $evt);
+        //     },
+        //     // onMouse() {
+        //     //     console.log('moveu')
+        //     // },
+        //     // outside() {
+        //     //     console.log('soltou')
+        //     // },
+        //     onSubmit() {
+        //         console.log("redirecionol")
+        //     },
+        //     mostrar() {
+        //         console.log(this.user)
+        //     },
+
+        // }
 
     }
 </script>
 
 <!--ESTILO - CSS -->
 <style>
-    .titel {
-        font-size: 30px;
-        color:  #fa3030;
-    }
-    .titel-home {
-        font-size: 50px;
-        color: green;
-    } 
-    .subTitle {
-        color: yellow;
-    }
-
- 
-    .header {
-        font-size: 1rem;
-        background-color: aqua;
-    }
-
-    .list {
-        max-width: 50%;
-        background-color: black;
-        margin: 5px auto;
-        padding: 8px  10px;
-        text-align: start;
-        color: #fff;
-    }
+   
 </style>
