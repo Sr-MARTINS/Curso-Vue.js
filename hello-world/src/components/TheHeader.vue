@@ -129,8 +129,7 @@
         {{ pageCont }}
     </div> -->
 
-
-    <div>
+    <!-- <div>
         <desmont v-if="showDesmont"/>
         <h1>Hello World</h1>
         {{ isName }}  <br><br> 
@@ -138,8 +137,24 @@
         <button @click="showDesmont = !showDesmont">
             Toggle <>
         </button>
-    </div>
+    </div> -->
 
+    <div>
+        <desmont>
+            <template v-slot:title>
+                <h1>Home</h1>
+            </template>
+
+            <template v-slot:description>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
+            </template>
+
+            <template>
+                <p>mart</p>
+            </template>
+        </desmont>
+
+    </div>
 </template>
 
 <!--LOGICA - JS -->

@@ -1,6 +1,8 @@
 <template>
-    <header>
-        <H1>Componets Vue</H1>
+    <header class="header">
+       <slot name="title"></slot>
+       <slot name="description"> </slot>
+       <slot></slot>
     </header>
 </template>
 
