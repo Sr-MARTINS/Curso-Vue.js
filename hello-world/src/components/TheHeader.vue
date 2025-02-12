@@ -139,8 +139,8 @@
         </button>
     </div> -->
 
-    <div>
-        <desmont>
+    <!-- <div>
+        <desMont>
             <template v-slot:title>
                 <h1>Home</h1>
             </template>
@@ -149,20 +149,25 @@
                 <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
             </template>
 
-            <template>
-                <p>mart</p>
-            </template>
-        </desmont>
+        </desMont>
 
+    </div> -->
+
+    <div>
+        <p class="card">Test</p>
+        <BaseCard/>
     </div>
+    
 </template>
 
 <!--LOGICA - JS -->
 <script>
-    import desmont from '@/components/desmont.vue'
+// import desMont from '@/components/desMont.vue';
+import BaseCard from './BaseCard.vue';
+
     export default {
         name: 'App',
-        components: {desmont},
+        components: {BaseCard},
         data() {
             return {
                 isName: 'Martins',
@@ -172,56 +177,56 @@
 
                 // isName: "",
 
-                sports:'futboll',
-                name: "Jonh",
+                // sports:'futboll',
+                // name: "Jonh",
 
-                newsLeter: '',
+                // newsLeter: '',
 
-                cores: '',
+                // cores: '',
 
-                home: true,
-                pStyle: {'color': 'aqua', 'background-color': 'black' },
-                classVar: 'titel',
+                // home: true,
+                // pStyle: {'color': 'aqua', 'background-color': 'black' },
+                // classVar: 'titel',
 
-                todos: [ 
-                        { 
-                            "userId": 1, 
-                            "id": 1, 
-                            "title": "delectus aut autem", 
-                            "completed": false,
-                            // myImg:'https://placehold.co/150'
-                        }, 
-                        { 
-                            "userId": 1, 
-                            "id": 2, 
-                            "title": "quis ut nam facilis et officia qui", 
-                            "completed": false,
-                            // myImg:'https://placehold.co/150'
-                        }, 
-                        { 
-                            "userId": 1, 
-                            "id": 3, 
-                            "title": "fugiat veniam minus", 
-                            "completed": false 
-                        }, 
-                        { 
-                            "userId": 1, 
-                            "id": 4, 
-                            "title": "et porro tempora", 
-                            "completed": true 
-                        }, 
-                        { 
-                            "userId": 1, 
-                            "id": 5, 
-                            "title": "laboriosam mollitia et enim quasi adipisci quia provident illum", 
-                            "completed": false 
-                        }, 
-                    ],
+                // todos: [ 
+                //         { 
+                //             "userId": 1, 
+                //             "id": 1, 
+                //             "title": "delectus aut autem", 
+                //             "completed": false,
+                //             // myImg:'https://placehold.co/150'
+                //         }, 
+                //         { 
+                //             "userId": 1, 
+                //             "id": 2, 
+                //             "title": "quis ut nam facilis et officia qui", 
+                //             "completed": false,
+                //             // myImg:'https://placehold.co/150'
+                //         }, 
+                //         { 
+                //             "userId": 1, 
+                //             "id": 3, 
+                //             "title": "fugiat veniam minus", 
+                //             "completed": false 
+                //         }, 
+                //         { 
+                //             "userId": 1, 
+                //             "id": 4, 
+                //             "title": "et porro tempora", 
+                //             "completed": true 
+                //         }, 
+                //         { 
+                //             "userId": 1, 
+                //             "id": 5, 
+                //             "title": "laboriosam mollitia et enim quasi adipisci quia provident illum", 
+                //             "completed": false 
+                //         }, 
+                //     ],
 
-                user: {
-                frest_name: 'Joao',
-                last_name: 'Victor'
-                },
+                // user: {
+                // frest_name: 'Joao',
+                // last_name: 'Victor'
+                // },
             }
         },
 
@@ -308,5 +313,5 @@
 
 <!--ESTILO - CSS -->
 <style>
-   
+    
 </style>

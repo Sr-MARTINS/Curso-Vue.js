@@ -1,8 +1,7 @@
 <template>
-    <header class="header">
+    <header>
        <slot name="title"></slot>
        <slot name="description"> </slot>
-       <slot></slot>
     </header>
 </template>
 
