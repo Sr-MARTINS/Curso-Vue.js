@@ -1,4 +1,4 @@
-# hello-world
+# curso-vue
 
 ## Project setup
 ```
